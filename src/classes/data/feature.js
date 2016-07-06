@@ -1,5 +1,5 @@
 import enhance from '../../enhancer.js';
-import {keys, values, iteratorSym, promisify} from '../../helpers.js';
+import {keys, values, getEntries, promisify} from '../../helpers.js';
 
 enhance(google.maps.Data.Feature);
 
@@ -11,9 +11,7 @@ google.maps.Data.Feature.prototype.entries = function() {
 
 google.maps.Data.Feature.prototype.keys = keys;
 google.maps.Data.Feature.prototype.values = values;
-google.maps.Data.Feature.prototype[Symbol.iterator] = iteratorSym
+google.maps.Data.Feature.prototype[Symbol.iterator] = getEntries
 
 google.maps.Data.Feature.prototype.toGeoJsonAsync = 
 	promisify(google.maps.Data.Feature.prototype.toGeoJson);
-
-export default google.maps.Data.Feature;

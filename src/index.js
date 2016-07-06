@@ -9,17 +9,17 @@ import './classes/data/geometry.js';
 
 if (typeof google !== 'undefined' && google.maps !== undefined) {
 
-[
-	google.maps.Map,
-	google.maps.Marker,
-	google.maps.InfoWindow,
-	google.maps.Polyline,
-	google.maps.Polygon,
-	google.maps.Rectangle,
-	google.maps.Circle,
-	google.maps.GroundOverlay,
-	google.maps.OverlayView,
-]
-.forEach(o => enhance(o))
+	[
+		google.maps.Map,
+		google.maps.Marker,
+		google.maps.InfoWindow,
+		google.maps.Polyline,
+		google.maps.Polygon,
+		google.maps.Rectangle,
+		google.maps.Circle,
+		google.maps.GroundOverlay,
+		google.maps.OverlayView,
+	]
+	.forEach(o => enhance(o))
 
 }

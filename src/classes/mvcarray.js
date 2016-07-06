@@ -1,5 +1,5 @@
 import enhance from '../enhancer.js';
-import {keys, values, iteratorSym} from '../helpers.js';
+import {keys, values, getValues} from '../helpers.js';
 
 enhance(google.maps.MVCArray);
 
@@ -9,7 +9,7 @@ google.maps.MVCArray.prototype.entries = function*() {
 
 google.maps.MVCArray.prototype.keys = keys
 google.maps.MVCArray.prototype.values = values
-google.maps.MVCArray.prototype[Symbol.iterator] = iteratorSym
+google.maps.MVCArray.prototype[Symbol.iterator] = getValues
 
 google.maps.MVCArray.prototype.toJSON = function() {return [...this];}
 

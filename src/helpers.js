@@ -6,8 +6,12 @@ export function* values() {
 	for (let [, value] of this.entries()) yield value;
 }
 
-export function iteratorSym() {
+export function getEntries() {
 	return this.entries();
+}
+
+export function getValues() {
+	return this.values();
 }
 
 function padArray(array, desiredLength) {

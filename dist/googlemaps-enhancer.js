@@ -28,7 +28,8 @@
 	function* _values() {
 		for (let [, value] of this.entries()) yield value;
 	}
-	function iteratorSym() { return this.entries(); }
+	function getEntries() { return this.entries(); }
+	function getValues() { return this.values(); }
 
 	function padArray(array, desiredLength) {
 		if (array.length < desiredLength) {
@@ -76,9 +77,7 @@
 	google.maps.Data.prototype.entries = function*() {
 		for (let value of this.values()) yield [value.id, value];
 	}
-	google.maps.Data.prototype[Symbol.iterator] = function() {
-		return this.values();
-	}
+	google.maps.Data.prototype[Symbol.iterator] = getValues
 	google.maps.Data.prototype.loadGeoJsonAsync = 
 		promisify(google.maps.Data.prototype.loadGeoJson);
 	google.maps.Data.prototype.toGeoJsonAsync = 
@@ -92,7 +91,7 @@
 	}
 	google.maps.Data.Feature.prototype.keys = _keys;
 	google.maps.Data.Feature.prototype.values = _values;
-	google.maps.Data.Feature.prototype[Symbol.iterator] = iteratorSym;
+	google.maps.Data.Feature.prototype[Symbol.iterator] = getEntries;
 	google.maps.Data.Feature.prototype.toGeoJsonAsync = 
 		promisify(google.maps.Data.Feature.prototype.toGeoJson);
 
@@ -104,7 +103,7 @@
 	}
 	google.maps.Data.Geometry.prototype.keys = _keys
 	google.maps.Data.Geometry.prototype.values = _values
-	google.maps.Data.Geometry.prototype[Symbol.iterator] = iteratorSym
+	google.maps.Data.Geometry.prototype[Symbol.iterator] = getEntries
 
 
 	const lat = { get() {return this.lat();} }
@@ -125,7 +124,7 @@
 	}
 	google.maps.MVCArray.prototype.keys = _keys
 	google.maps.MVCArray.prototype.values = _values
-	google.maps.MVCArray.prototype[Symbol.iterator] = iteratorSym
+	google.maps.MVCArray.prototype[Symbol.iterator] = getValues
 	google.maps.MVCArray.prototype.toJSON = function() {return [...this];}
 	google.maps.MVCArray.prototype.toString = function() {
 		return this.toJSON().join(',')

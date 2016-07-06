@@ -1,5 +1,5 @@
 import enhance from '../../enhancer.js';
-import {keys, values, iteratorSym} from '../../helpers.js';
+import {keys, values, getEntries} from '../../helpers.js';
 
 enhance(google.maps.Data.Geometry);
 
@@ -11,6 +11,4 @@ google.maps.Data.Geometry.prototype.entries = function() {
 
 google.maps.Data.Geometry.prototype.keys = keys
 google.maps.Data.Geometry.prototype.values = values
-google.maps.Data.Geometry.prototype[Symbol.iterator] = iteratorSym
-
-export default google.maps.Data.Geometry;
+google.maps.Data.Geometry.prototype[Symbol.iterator] = getEntries
