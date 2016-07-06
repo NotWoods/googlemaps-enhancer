@@ -23,5 +23,7 @@
   "dependencies": {},
   "devDependencies": {
     "tape": "^4.6.0"
-  }
+  },
+	"repository": "NotWoods/googlemaps-enhancer",
+	"bugs": "https://github.com/NotWoods/googlemaps-enhancer/issues"
 }
