@@ -103,7 +103,7 @@
 	}
 	google.maps.Data.Geometry.prototype.keys = _keys
 	google.maps.Data.Geometry.prototype.values = _values
-	google.maps.Data.Geometry.prototype[Symbol.iterator] = getEntries
+	google.maps.Data.Geometry.prototype[Symbol.iterator] = getValues
 
 
 	const lat = { get() {return this.lat();} }
