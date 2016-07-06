@@ -1,15 +1,11 @@
-/**
- * Adds getter and setter methods that can be used instead of getSomething()
- * or setSomething(value) to Google Maps API objects. 
- * @module lib/googlemaps
- */
-
 import enhance from './enhance.js';
 
-import MVCArray from './mvcarray.js';
-import * as Data from './data';
-import LatLng from './latlng.js';
-import Services from './services.js';
+import './classes/mvcarray.js';
+import './classes/latlng.js';
+import './classes/services.js';
+import './classes/data/data.js';
+import './classes/data/feature.js';
+import './classes/data/geometry.js';
 
 if (typeof google !== 'undefined' && google.maps !== undefined) {
 
@@ -27,5 +23,3 @@ if (typeof google !== 'undefined' && google.maps !== undefined) {
 .forEach(o => enhance(o))
 
 }
-
-export default google.maps;

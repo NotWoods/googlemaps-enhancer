@@ -1,5 +1,5 @@
-import enhance from './enhancer.js';
-import {promisify} from './helpers.js';
+import enhance from '../../enhancer.js';
+import {promisify} from '../../helpers.js';
 
 enhance(google.maps.Data);
 

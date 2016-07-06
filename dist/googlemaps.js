@@ -93,7 +93,7 @@
 	google.maps.Data.Feature.prototype.keys = _keys;
 	google.maps.Data.Feature.prototype.values = _values;
 	google.maps.Data.Feature.prototype[Symbol.iterator] = iteratorSym;
-	google.maps.Data.prototype.toGeoJsonAsync = 
+	google.maps.Data.Feature.prototype.toGeoJsonAsync = 
 		promisify(google.maps.Data.Feature.prototype.toGeoJson);
 
 

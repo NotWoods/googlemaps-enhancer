@@ -1,4 +1,4 @@
-import enhance from './enhancer.js';
+import enhance from '../enhancer.js';
 
 enhance(google.maps.LatLng);
 
@@ -25,5 +25,3 @@ google.maps.LatLng.prototype[Symbol.iterator] = function*() {
 	yield this.lng();
 	yield this.lat();
 }
-
-export default google.maps.LatLng;

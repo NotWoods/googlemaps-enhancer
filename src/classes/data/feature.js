@@ -1,5 +1,5 @@
-import enhance from './enhancer.js';
-import {keys, values, iteratorSym, promisify} from './helpers.js';
+import enhance from '../../enhancer.js';
+import {keys, values, iteratorSym, promisify} from '../../helpers.js';
 
 enhance(google.maps.Data.Feature);
 
