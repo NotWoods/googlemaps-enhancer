@@ -2,10 +2,8 @@
 A script to add some enhancements to the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/) by extending their prototypes.
 
 ## Installation
-Download [googlemaps-enhancer.min.js](https://raw.githubusercontent.com/NotWoods/googlemaps-enhancer/master/dist/googlemaps-enhancer.min.js) or 
-```
-npm install --save googlemaps-enhancer
-```
+Download [googlemaps-enhancer.min.js](https://raw.githubusercontent.com/NotWoods/googlemaps-enhancer/master/dist/googlemaps-enhancer.min.js) ~~or `npm install --save googlemaps-enhancer`~~ (eventually).
+
 Since this is a script for browsers (as the Google Maps API only runs in browsers) you'll need to either copy the googlemaps.min.js file from node_modules or use a module loader like [JSPM](http://jspm.io/).
 
 ## Usage
