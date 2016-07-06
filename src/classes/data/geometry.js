@@ -5,7 +5,7 @@ enhance(google.maps.Data.Geometry);
 
 google.maps.Data.Geometry.prototype.entries = function() {
 	let results = [];
-	this.forEachLatLng((value, key) => results.push([key, value]));
+	this.forEachLatLng(latlng => results.push(latlng));
 	return results.entries();
 }
 
