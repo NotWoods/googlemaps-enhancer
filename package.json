@@ -1,0 +1,27 @@
+{
+  "name": "googlemaps-enhancer",
+  "version": "1.0.0",
+	"description": "A script to add some enhancements to the Google Maps JavaScript API, such as iterators, getter/setters, and Promises",
+  "main": "dist/googlemaps.min.js",
+  "directories": {
+    "lib": "src",
+    "test": "tests"
+  },
+	"scripts": {
+		"test": "tape tests/**"
+	},
+	"files": [
+		"dist",
+		"src"
+	],
+	"keywords": [
+		"google maps", "googlemaps", "google-maps", "api",
+		"geo", "enhance", "es2015", "map", "browser"
+	],
+  "author": "Tiger Oakes <tigeroakes@gmail.com> (http://tigeroakes.com)",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.6.0"
+  }
+}
