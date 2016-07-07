@@ -22,3 +22,23 @@ export default function enhancer(someClass) {
 
 	Object.defineProperties(someClass.prototype, descriptors);
 }
+
+function transformCheck(text, object, prefix, length) {
+	const etter = prefix + text.charAt(0) + text.substr(1), 
+		proto = object.prototype;
+	if (etter in proto && proto[etter].length === length) return etter; 
+	else return text;
+}
+
+export const handler = {
+	get(obj, prop, receiver) {
+		return Reflect.get(obj, transformCheck(prop,obj,'get',0), receiver);
+	},
+	set(obj, prop, value, receiver) {
+		return Reflect.set(obj, transformCheck(prop,obj,'set',1), value, receiver);
+	}
+}
+
+export function proxy(gMapObject) {
+	return new Proxy(gMapObject, handler)
+}

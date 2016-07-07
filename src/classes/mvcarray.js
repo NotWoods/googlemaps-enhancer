@@ -1,5 +1,16 @@
-import enhance from '../enhancer.js';
+import {proxy} from '../enhancer.js';
 import {keys, values, getValues} from '../helpers.js';
+
+export function MVCArray(mvcArr) {
+	return new Proxy(proxy(mvcArr), {
+		get(obj, prop, receiver) {
+			if (typeof prop === 'number') return obj.getAt(prop);
+		},
+		set(obj, prop, value, receiver) {
+			if (typeof prop === 'number') return obj.setAt(prop, value);
+		}
+	})
+}
 
 enhance(google.maps.MVCArray);
 
