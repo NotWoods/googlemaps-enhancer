@@ -2,14 +2,15 @@
   "name": "googlemaps-enhancer",
   "version": "1.0.0",
 	"description": "A script to add some enhancements to the Google Maps JavaScript API, such as iterators, getter/setters, and Promises",
-  "main": "dist/googlemaps.min.js",
+  "main": "dist/iife.js",
 	"jsnext:main": "src/index.js",
   "directories": {
     "lib": "src",
     "test": "tests"
   },
 	"scripts": {
-		"test": "tape tests/**"
+		"test": "rollup tests/enhance.spec.js -f iife -o tests/build.js -g tape:test",
+		"prepublish": "rollup -i src/index.js -o dist/iife.js -f iife -m --intro \"if (typeof google === 'undefined' || google.maps === undefined) return;\""
 	},
 	"files": [
 		"dist",
@@ -23,7 +24,8 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "tape": "^4.6.0"
+    "tape": "^4.6.0",
+		"rollup": "^0.34.1"
   },
 	"repository": "NotWoods/googlemaps-enhancer",
 	"bugs": "https://github.com/NotWoods/googlemaps-enhancer/issues"
