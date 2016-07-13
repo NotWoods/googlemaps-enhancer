@@ -1,4 +1,4 @@
-import enhance from '../../enhancer.js';
+import enhance from '../../enhance.js';
 import {promisify, getValues} from '../../helpers.js';
 
 enhance(google.maps.Data);

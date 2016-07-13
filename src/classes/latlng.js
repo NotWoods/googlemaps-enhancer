@@ -1,4 +1,4 @@
-import enhance from '../enhancer.js';
+import enhance from '../enhance.js';
 
 enhance(google.maps.LatLng);
 

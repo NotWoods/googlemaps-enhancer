@@ -1,4 +1,4 @@
-import enhance from '../enhancer.js';
+import enhance from '../enhance.js';
 import {keys, values, getValues} from '../helpers.js';
 
 enhance(google.maps.MVCArray);
