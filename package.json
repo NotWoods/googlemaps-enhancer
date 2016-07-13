@@ -3,6 +3,7 @@
   "version": "1.0.0",
 	"description": "A script to add some enhancements to the Google Maps JavaScript API, such as iterators, getter/setters, and Promises",
   "main": "dist/googlemaps.min.js",
+	"jsnext:main": "src/index.js",
   "directories": {
     "lib": "src",
     "test": "tests"
